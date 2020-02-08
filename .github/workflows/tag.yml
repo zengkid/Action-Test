@@ -15,8 +15,8 @@ jobs:
       
     - name: Run a one-line script
       env:
-        VYOS_VERSION: ${VERSION}
-      run: echo Hello, hello-${VERSION}-boy world!
+        VYOS_VERSION: ${RELEASE_VERSION}
+      run: echo Hello, hello-${VYOS_VERSION}-boy world!
       
     - name: Run a multi-line script
       run: |
