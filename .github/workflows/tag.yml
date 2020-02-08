@@ -14,11 +14,12 @@ jobs:
       run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
       
     - name: Run a one-line script
-      run: echo 'Hello, hello-${RELEASE_VERSION}-boy world!'
+      run: echo 'Hello, hello-${{ env.RELEASE_VERSION }}-boy world!'
       
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-        echo aaaa-${RELEASE_VERSION}-bbb
+        echo 'aaaa-${RELEASE_VERSION}-bbb'
+        echo 'aaaa-${{ env.RELEASE_VERSION }}-bbb'
         echo ${{ env.RELEASE_VERSION }}
