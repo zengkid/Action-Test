@@ -2,17 +2,22 @@ name: CI
 
 on: [push]
 
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    steps:
+    steps:     
 #     - uses: actions/checkout@v2
     - name: Set env
       run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
+      
     - name: Run a one-line script
-      run: echo Hello, hello-${RELEASE_VERSION}-boy world!
+      env:
+        VYOS_VERSION: ${VERSION}
+      run: echo Hello, hello-${VERSION}-boy world!
+      
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
