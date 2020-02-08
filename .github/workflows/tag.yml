@@ -17,5 +17,5 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-        echo $RELEASE_VERSION
+        echo aaaa-${RELEASE_VERSION}-bbb
         echo ${{ env.RELEASE_VERSION }}
