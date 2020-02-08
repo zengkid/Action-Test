@@ -14,9 +14,7 @@ jobs:
       run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
       
     - name: Run a one-line script
-      env:
-        VYOS_VERSION: ${RELEASE_VERSION}
-      run: echo Hello, hello-${VYOS_VERSION}-boy world!
+      run: echo 'Hello, hello-${RELEASE_VERSION}-boy world!'
       
     - name: Run a multi-line script
       run: |
